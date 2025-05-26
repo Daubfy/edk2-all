@@ -23,9 +23,9 @@ jobs:
       matrix:
         device:
           # 9845
-          - mh2lm
-          - nabu
-          - cepheus
+          - raven
+          - bleujay
+          - oriole
           # 2100
           - r9s
           - o1s
@@ -49,7 +49,7 @@ jobs:
 
       - name: Build device ${{ matrix.device }}
         run: |
-          ./build.sh --device panther --installer-zip
+          ./build.sh --device ${{ matrix.device }} --installer-zip
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
