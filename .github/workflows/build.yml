@@ -7,6 +7,6 @@ jobs:
       - name: Setup build environment
         run: |
           sudo apt update
-          sudo apt install build-essential uuid-dev clang llvm iasl nasm gcc-aarch64-linux-gnu abootimg python3-distutils python3-pil python3-git gettext
+          sudo apt install build-essential uuid-dev clang llvm iasl nasm gcc-aarch64-linux-gnu abootimg python3-pil python3-git gettext
           sudo chmod 777 build.sh
           sudo ./build.sh -d panther
