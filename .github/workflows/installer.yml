@@ -22,14 +22,18 @@ jobs:
       max-parallel: 8
       matrix:
         device:
-          # sm8150
+          # 9845
           - mh2lm
           - nabu
           - cepheus
-          - vayu-huaxing
-          - vayu-tianma
-          # sm8550
-          - fuxi
+          # 2100
+          - r9s
+          - o1s
+          # 9855
+          - panther
+          # 888
+          - r9q
+          - r9q2
 
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -45,7 +49,7 @@ jobs:
 
       - name: Build device ${{ matrix.device }}
         run: |
-          ./build.sh --device ${{ matrix.device }} --installer-zip
+          ./build.sh --device panther --installer-zip
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
